@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+
+  --primary-hue: 0; 
+  --primary-saturation: 100%;
+  --primary-lightness: 74.3%; 
+  
+  --secondary-hue: 30; 
+  --secondary-saturation: 92.9%;
+  --secondary-lightness: 70.4%; 
+
+  --primary: var(--primary-hue) var(--primary-saturation) var(--primary-lightness);
+  --primary-foreground: 0 0% 100%; 
+  
+  --secondary: var(--secondary-hue) var(--secondary-saturation) var(--secondary-lightness);
+  --secondary-foreground: 20 14.3% 4.1%; 
+
+  --muted: 30 50% 95%; 
+  --muted-foreground: 30 10% 45%;
+
+  --accent-hue: var(--primary-hue);
+  --accent-saturation: var(--primary-saturation);
+  --accent-lightness: calc(var(--primary-lightness) + 10%); 
+  
+  --accent: var(--accent-hue) var(--accent-saturation) var(--accent-lightness);
+  --accent-foreground: 0 0% 0%; 
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border-hue: var(--secondary-hue);
+  --border-saturation: 50%;
+  --border-lightness: 80%;
+  --border: var(--border-hue) var(--border-saturation) var(--border-lightness); 
+  
+  --input-hue: var(--secondary-hue);
+  --input-saturation: 50%;
+  --input-lightness: 80%;
+  --input: var(--input-hue) var(--input-saturation) var(--input-lightness); 
+  
+  --ring: var(--primary-hue) var(--primary-saturation) var(--primary-lightness); 
+  --radius: 0.75rem;
+
+  --vibrant-coral: #ff7c7d;
+  --soft-peach: #fac26f;
+  --light-peach-bg: #fff2e0; 
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: 'Poppins', sans-serif;
+}
+
+.paw-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff7c7d' fill-opacity='0.05'%3E%3Cpath d='M30 30c0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12 12-5.373 12-12zm12-12c6.627 0 12 5.373 12 12s-5.373 12-12 12-12-5.373-12-12 5.373-12 12-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.gradient-text {
+  color: var(--vibrant-coral); 
+}
+
+.hero-title-gradient-text {
+  color: var(--vibrant-coral);
+}
+
+
+.floating-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.bounce-slow {
+  animation: bounce-slow 3s infinite;
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.custom-shadow {
+  box-shadow: 0 20px 25px -5px rgba(255, 124, 125, 0.1), 0 10px 10px -5px rgba(255, 124, 125, 0.04);
+}
+
+.hero-gradient {
+  background-color: var(--light-peach-bg); 
+}
+
+.service-card-hover {
+  transition: all 0.3s ease;
+}
+
+.service-card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(255, 124, 125, 0.25);
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: var(--primary-hue) var(--primary-saturation) var(--primary-lightness);
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: var(--secondary-hue) var(--secondary-saturation) var(--secondary-lightness);
+    --secondary-foreground: 20 14.3% 4.1%;
+
+    --muted: 30 50% 95%;
+    --muted-foreground: 30 10% 45%;
+    
+    --accent: var(--accent-hue) var(--accent-saturation) var(--accent-lightness);
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: var(--border-hue) var(--border-saturation) var(--border-lightness);
+    --input: var(--input-hue) var(--input-saturation) var(--input-lightness);
+    --ring: var(--primary-hue) var(--primary-saturation) var(--primary-lightness);
+    --radius: 0.75rem;
+  }
+ 
+  .dark {
+    --background: 20 14.3% 4.1%; 
+    --foreground: 0 0% 98%; 
+
+    --card: 20 14.3% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 20 14.3% 4.1%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: var(--primary-hue) var(--primary-saturation) calc(var(--primary-lightness) - 10%); 
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: var(--secondary-hue) var(--secondary-saturation) calc(var(--secondary-lightness) - 10%); 
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 20 14.3% 15%;
+    --muted-foreground: 0 0% 60%;
+    
+    --accent: var(--accent-hue) var(--accent-saturation) calc(var(--accent-lightness) - 15%); 
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 20 14.3% 20%;
+    --input: 20 14.3% 20%;
+    --ring: var(--primary-hue) var(--primary-saturation) var(--primary-lightness);
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
