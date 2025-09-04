@@ -75,7 +75,3 @@ Then open: [http://localhost:5173/](http://localhost:5173/)
 
 **Marco Barreno**
 [LinkedIn](https://www.linkedin.com/in/marco-barreno-uh/) | [GitHub](https://github.com/marcobarreno2003)
-
-```
-
-
